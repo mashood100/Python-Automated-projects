@@ -30,7 +30,7 @@ print("Brust times List: ",brustlst )
 proc = proclst
 n = len(proclst)
 
-burst_time = [10, 5, 8,7]
+burst_time = brustlst
 
 #  Quantum Time
 quantum = int(input(("enter Quantum time : ")))
@@ -70,8 +70,10 @@ def findWaitingTime(processes, n, bt,
 
 					# Decrease the burst_time of current
 					# process by quantum
+					
 					rem_bt[i] -= quantum
-				
+					
+				    
 				# If burst time is smaller than or equal
 				# to quantum. Last cycle for this process
 				else:
@@ -87,6 +89,7 @@ def findWaitingTime(processes, n, bt,
 					# As the process gets fully executed
 					# make its remaining burst time = 0
 					rem_bt[i] = 0
+			print("Remaining Brust Time",rem_bt[i],"sec of Process",proc[i])		
 				
 		# If all processes are done break the Loop
 		if (done == True):
