@@ -1,3 +1,4 @@
+import time
 ################# proccess input
 proclst = []
 n = int(input("Enter number of Proccess : "))
@@ -89,8 +90,9 @@ def findWaitingTime(processes, n, bt,
 					# As the process gets fully executed
 					# make its remaining burst time = 0
 					rem_bt[i] = 0
+		
 			print("Remaining Brust Time",rem_bt[i],"sec of Process",proc[i])		
-				
+		time.sleep(rem_bt[i])		
 		# If all processes are done break the Loop
 		if (done == True):
 			break
